@@ -1,13 +1,29 @@
 import React from "react";
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { ActivityIndicator, StyleSheet, Text, View } from "react-native";
+import { QueryClient, QueryClientProvider } from "react-query";
+import { useBanner } from "./zerve/MyStore";
+
+function Home() {
+  const { data, isLoading } = useBanner({
+    onError: (err) => alert(err),
+  });
+  return (
+    <View style={styles.container}>
+      {isLoading ? <ActivityIndicator /> : null}
+      <Text>{data}</Text>
+    </View>
+  );
+}
+
+const queryClient = new QueryClient();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+    <QueryClientProvider client={queryClient}>
       <StatusBar style="auto" />
-    </View>
+      <Home />
+    </QueryClientProvider>
   );
 }
 

@@ -1,0 +1,19 @@
+{
+  "HText": [
+    {
+      "text": "Welcome to "
+    },
+    {
+      "bold": true,
+      "text": "Zerve Content"
+    },
+    {
+      "text": " editing in "
+    },
+    {
+      "bold": true,
+      "text": "React Native"
+    }
+  ],
+  "Banner": 0
+}

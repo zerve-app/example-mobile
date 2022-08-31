@@ -1,0 +1,52 @@
+{
+  "schemas": {
+    "HumanText": {
+      "$id": "https://type.zerve.link/HumanText",
+      "title": "HumanText",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "text": {
+            "type": "string"
+          },
+          "bold": {
+            "type": "boolean"
+          },
+          "italic": {
+            "type": "boolean"
+          },
+          "strike": {
+            "type": "boolean"
+          },
+          "underline": {
+            "type": "boolean"
+          },
+          "code": {
+            "type": "boolean"
+          },
+          "linkHref": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "text"
+        ]
+      },
+      "readOnly": true
+    }
+  },
+  "files": {
+    "HText": {
+      "$ref": "https://type.zerve.link/HumanText",
+      "title": "HumanText"
+    },
+    "Banner": {
+      "default": 0,
+      "description": "",
+      "title": "",
+      "type": "number"
+    }
+  }
+}
